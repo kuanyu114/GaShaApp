@@ -42,7 +42,8 @@ namespace GaShaApp
         {
             if (totalCoins == 0)
             {
-                textBox2.Text = totalCoins.ToString() + "元";
+                textBox2.Text = showMessage();
+                textBox2.Text += totalCoins.ToString() + "元";
                 MessageBox.Show("已退幣");
                 button3.Enabled = false;
                 button2.Enabled = false;
@@ -52,8 +53,14 @@ namespace GaShaApp
                 if (totalCoins >= itemPrice)
                 {
                     button3.Enabled = true;
+                    textBox2.Text = showMessage();
+                   
                 }
-                textBox2.Text = totalCoins.ToString() + "元";
+                else
+                {
+                    textBox2.Text = showMessage();
+                }
+                textBox2.Text += totalCoins.ToString() + "元";
                 button2.Enabled = true;
             }
         }
@@ -63,13 +70,41 @@ namespace GaShaApp
         private void purchaseItem()
         {
             totalCoins -= itemPrice;
-            textBox2.Text = totalCoins.ToString() + "元";
+
             MessageBox.Show("已出貨");
-            if (totalCoins < itemPrice)
+
+
+            if (totalCoins == 0)
+            {
+                button2.Enabled = false;
+                textBox2.Text = showMessage();
+            }
+            else if (totalCoins >= itemPrice)
+            {
+                textBox2.Text = showMessage();
+            }
+            else
             {
                 button3.Enabled = false;
-                if (totalCoins == 0)
-                    button2.Enabled = false;
+                textBox2.Text = showMessage();
+            }
+
+            textBox2.Text += totalCoins.ToString() + "元";
+        }
+        private string showMessage()
+        {
+            if (totalCoins == 0)
+            {
+                
+                return "機器閒置\r\n";
+            }
+            else if (totalCoins >= itemPrice)
+            {
+                return "機器內金額足夠, 可以出貨\r\n";
+            }
+            else
+            {
+                return "機器內金額不足夠出貨\r\n";
             }
         }
     }
