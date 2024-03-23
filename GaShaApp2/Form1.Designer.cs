@@ -34,6 +34,7 @@
             this.buttonInsertCoins1 = new GaShaApp2.ButtonInsertCoins(this.components);
             this.buttonDeliverItems1 = new GaShaApp2.ButtonDeliverItems(this.components);
             this.buttonReturnCoins1 = new GaShaApp2.ButtonReturnCoins(this.components);
+            this.buttonReturnCoins2 = new GaShaApp2.ButtonReturnCoins(this.components);
             this.SuspendLayout();
             // 
             // textBox1
@@ -78,11 +79,22 @@
             this.buttonReturnCoins1.Text = "退幣";
             this.buttonReturnCoins1.UseVisualStyleBackColor = true;
             // 
+            // buttonReturnCoins2
+            // 
+            this.buttonReturnCoins2.Location = new System.Drawing.Point(22, 261);
+            this.buttonReturnCoins2.Name = "buttonReturnCoins2";
+            this.buttonReturnCoins2.Size = new System.Drawing.Size(75, 23);
+            this.buttonReturnCoins2.TabIndex = 5;
+            this.buttonReturnCoins2.Text = "退幣";
+            this.buttonReturnCoins2.UseVisualStyleBackColor = true;
+            this.buttonReturnCoins2.Click += new System.EventHandler(this.buttonReturnCoins2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 248);
+            this.ClientSize = new System.Drawing.Size(283, 364);
+            this.Controls.Add(this.buttonReturnCoins2);
             this.Controls.Add(this.buttonReturnCoins1);
             this.Controls.Add(this.buttonDeliverItems1);
             this.Controls.Add(this.buttonInsertCoins1);
@@ -103,6 +115,7 @@
         private ButtonInsertCoins buttonInsertCoins1;
         private ButtonDeliverItems buttonDeliverItems1;
         private ButtonReturnCoins buttonReturnCoins1;
+        private ButtonReturnCoins buttonReturnCoins2;
     }
 }
 

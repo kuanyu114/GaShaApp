@@ -24,6 +24,13 @@ namespace GaShaApp2
         {
             mediator = new Mediator(this.buttonInsertCoins1, this.buttonReturnCoins1, this.buttonDeliverItems1);
         }
+
+        private void buttonReturnCoins2_Click(object sender, EventArgs e)
+        {
+            var radom = new Random();
+            var amount = radom.Next(1, 7);
+            Console.WriteLine(amount);
+        }
     }
     /// <summary>
     /// 協調者
